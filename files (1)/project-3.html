@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Field notes — a writing site — Ian Stalker</title>
+  <meta name="description" content="Résumé and portfolio of Ian Stalker">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-section="projects">
+<header class="topbar" id="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="index.html" aria-label="Ian Stalker — home">
+      <span class="avatar" aria-hidden="true">IS</span>
+      <span class="brand-text"><span class="name">Ian Stalker</span><span class="title">Electrical Engineering Student</span></span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="siteNav"><span></span><span></span><span></span></button>
+    <nav class="site-nav" id="siteNav" aria-label="Main navigation">
+      <ul><li><a href="index.html#profile" class="nav-link" data-section="profile">Profile</a></li><li><a href="index.html#experience" class="nav-link" data-section="experience">Experience</a></li><li><a href="index.html#projects" class="nav-link" data-section="projects">Projects</a></li><li><a href="index.html#skills" class="nav-link" data-section="skills">Skills</a></li><li><a href="index.html#education" class="nav-link" data-section="education">Education</a></li><li><a href="index.html#contact" class="nav-link" data-section="contact">Contact</a></li></ul>
+      <a class="btn-download" href="#" download>Download résumé (PDF)</a>
+    </nav>
+  </div>
+  <div class="progress-rail" aria-hidden="true"><div class="progress-fill" id="progressFill"></div></div>
+</header>
+
+
+<section class="hero hero-LDO" aria-label="Introduction">
+  <div class="hero-inner">
+    <p class="eyebrow">Ian Stalker</p>
+    <h1 class="hero-title">Buck Down Converter PCB Design</h1>
+  </div>
+</section>
+
+
+
+
+<main class="content">
+  <article class="section detail">
+    <a class="back-link" href="index.html#projects">&larr; All projects</a>
+    <h1 class="section-title">Summary</h1>
+    <p class="lede">Designed, built and tested a step-down (buck) converter on a custom PCB as an 
+      introduction to the full PCB workflow, from schematic and layout through assembly and bench testing. 
+      Built around the MC34063A switching regulator and co-designed as part of a lab group.</p>
+    <div class="meta-row"><span>Author & developer</span><span class="sep">·</span><span>2026</span></div>
+    <ul class="tag-list"><li>KiCad</li><li>PCB Design</li><li>Power electronics</li><li>Oscilloscope Analysis</li></ul>
+  
+    <figure>
+    <img src="photos/LDO Project/Kicad schematic.png" 
+    alt="Determining magnetic coupling in LtSpice" style="max-height: 100vh; object-fit: contain;">
+    <figcaption>Fig. 1: KiCad schematic for buck down converter</figcaption>
+    </figure> 
+    
+    <h2>Design</h2>
+    <li>Selected components from the MC34063A datasheet: a feedback divider to set the output voltage, 
+      three 1 Ω resistors in parallel (about 0.33 Ω) for current sensing, a 470 pF timing capacitor, 100 µF and 470 µF filter capacitors,
+       an RCH8011NP-680L through-hole inductor, and an SB1100 Schottky catch diode chosen for its low forward drop and fast switching.</li>
+    <li>Drew the schematic and routed a two-layer board in KiCad, following the manufacturer’s evaluation-board layout.</li>
+
+    <figure>
+    <img src="photos/LDO Project/LDO PCB schematic.png" 
+    alt="Determining magnetic coupling in LtSpice" style="max-height: 100vh; object-fit: contain;">
+    <figcaption>Fig. 2: PCB Schematic for buck down converter</figcaption>
+    </figure>
+    
+    <h2>Layout Considerations</h2>
+    <li>Kept the high-frequency switching loop (input capacitor, internal switch and catch diode) as small as possible to limit parasitic inductance, ringing and EMI.</li>
+    <li>Used wide traces on the high-current paths (Vin, switching node, Vout) to reduce resistance and voltage spikes.</li>
+    <li>Added ground pours on both layers as a low-impedance reference and heatsink.</li>
+    <li>Routed the sensitive feedback trace away from the inductor’s magnetic field.</li>
+
+    <h2>Outcome</h2>
+    <p>Skills gained: hands-on experience with PCB design in KiCad, switching-regulator component selection, layout for EMI and thermal performance, soldering and assembly, and oscilloscope testing/verification.<br> <br>Achieved <b>High Distinction (88)</b> of this project</p>
+    
+    <nav class="pager" aria-label="Project navigation">
+      <a href="project-2.html"><span>Previous</span>Fully Analogue Component Identifier Circuit</a>
+      <a href="project-4.html"><span>Next</span>Superheterodyne Reciever Simulation</a>
+    </nav>
+  </article>
+  <footer class="page-footer">
+  <ul class="social-links">
+    <li><a href="mailto:irstalker@bigpond.com">Email</a></li>
+    <li><a href="https://linkedin.com/in/" target="_blank" rel="noopener">LinkedIn</a></li>
+    <li><a href="https://github.com/" target="_blank" rel="noopener">GitHub</a></li>
+  </ul>
+  <p>&copy; 2026 Ian Stalker. Built with HTML, CSS &amp; JavaScript.</p>
+</footer>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
+ 

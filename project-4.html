@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Onboarding flow redesign — Ian Stalker</title>
+  <meta name="description" content="Résumé and portfolio of Ian Stalker">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-section="projects">
+<header class="topbar" id="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="index.html" aria-label="Ian Stalker — home">
+      <span class="avatar" aria-hidden="true"><img class="avatar" src="photos/Profile Picture.png" alt="Ian Stalker"></span>
+      <span class="brand-text"><span class="name">Ian Stalker</span><span class="title">Electrical Engineering Student</span></span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="siteNav"><span></span><span></span><span></span></button>
+    <nav class="site-nav" id="siteNav" aria-label="Main navigation">
+      <ul><li><a href="index.html#profile" class="nav-link" data-section="profile">Profile</a></li><li><a href="index.html#experience" class="nav-link" data-section="experience">Experience</a></li><li><a href="index.html#projects" class="nav-link" data-section="projects">Projects</a></li><li><a href="index.html#skills" class="nav-link" data-section="skills">Skills</a></li><li><a href="index.html#education" class="nav-link" data-section="education">Education</a></li><li><a href="index.html#contact" class="nav-link" data-section="contact">Contact</a></li></ul>
+      <a class="btn-download" href="Ian_Stalker_Resume.pdf" download>Download résumé (PDF)</a>
+    </nav>
+  </div>
+  <div class="progress-rail" aria-hidden="true"><div class="progress-fill" id="progressFill"></div></div>
+</header>
+
+<section class="hero hero-superhet" aria-label="Introduction">
+  <div class="hero-inner">
+    <p class="eyebrow">Ian Stalker</p>
+    <h1 class="hero-title">Superheterodyne Reciever Simulation</h1>
+  </div>
+</section>
+
+
+
+<main class="content">
+  <article class="section detail">
+    <a class="back-link" href="index.html#projects">&larr; All projects</a>
+    <h1 class="section-title">Summary</h1>
+    <p class="lede">Designed and simulated an AM superheterodyne radio receiver in LTspice as a personal project, 
+      covering the full signal chain from RF amplification through mixing, intermediate-frequency (IF) filtering, 
+      envelope detection and audio filtering. The receiver was designed with a later PCB implementation in mind. 
+      In simulation it picks out one station from several simultaneous AM signals and recovers its audio.</p>
+    
+    <ul class="tag-list"><li>LtSpice</li><li>Analogue Design</li><li>RF Circuits</li><li>Signal Processing</li></ul>
+
+    <figure>
+    <img src="photos/Superheterodyne Reciever/superhet banner.png" 
+    alt="Determining magnetic coupling in LtSpice" style="max-height: 100vh; object-fit: contain;">
+    <figcaption>Fig. 1: Full LtSpice schematic for a superheterodyne reciever</figcaption>
+    </figure> 
+
+    <br>
+    <figure>
+    <img src="photos/Superheterodyne Reciever/mixer.png" 
+    alt="Determining magnetic coupling in LtSpice" style="max-height: 100vh; object-fit: contain;">
+    <figcaption>Fig. 2: Switching mixer schematic</figcaption>
+    </figure> 
+
+    <br>
+    <figure>
+    <img src="photos/Superheterodyne Reciever/IF 2 stage filtering.png" 
+    alt="Determining magnetic coupling in LtSpice" style="max-height: 100vh; object-fit: contain;">
+    <figcaption>Fig. 3: 2-Stage intermediary filtering schematic</figcaption>
+    </figure> 
+
+    <br>
+    <figure>
+    <img src="photos/Superheterodyne Reciever/Envelope detector and LPF.png" 
+    alt="Determining magnetic coupling in LtSpice" style="max-height: 100vh; object-fit: contain;">
+    <figcaption>Fig. 4: Envelope detection and Low Pass Filtering schematic</figcaption>
+    </figure> 
+    
+    <h2>What it does</h2>
+    <li>Receives a combined input of multiple amplitude-modulated stations (carriers at 540, 576, 630 and 974 kHz, each with its own audio tone).</li>
+    <li>Selects the 576 kHz station, rejects the others, and recovers its audio tone.</li>
+
+    <figure>
+    <img src="photos/Superheterodyne Reciever/superhet thumbnail.png" 
+    alt="Determining magnetic coupling in LtSpice" style="max-height: 100vh; object-fit: contain;">
+    <figcaption>Fig. 5: Input signal's Fast Fourier Transform after initial tuning</figcaption>
+    </figure> 
+
+    <br>
+    <figure>
+    <img src="photos/Superheterodyne Reciever/envelope detection.png" 
+    alt="Determining magnetic coupling in LtSpice" style="max-height: 100vh; object-fit: contain;">
+    <figcaption>Fig. 6: Output post envelope detection compared with input signal</figcaption>
+    </figure> 
+
+    <br>
+    <figure>
+    <img src="photos/Superheterodyne Reciever/recieved signal FFT.png" 
+    alt="Determining magnetic coupling in LtSpice" style="max-height: 100vh; object-fit: contain;">
+    <figcaption>Fig. 7: FFT of the desired monotonic audio signal</figcaption>
+    </figure> 
+
+
+    <h2>What I learned</h2>
+    <li>Why superheterodyne receivers use a fixed intermediate frequency: the hard-to-build selective filtering is done once at a single frequency instead of across the whole band.</li>
+    <li>The architecture of a superheterodyne receiver, and how each stage contributes to selectivity.</li>
+    <li>Designing and tuning LC resonant circuits and BJT amplifier stages.</li>
+
+    <h2>Limitations</h2>
+    <li>The design is tuned to a single frequency. Tuning across the band would need variable (ganged) capacitors in the RF stage and local oscillator, so the IF stays fixed at 455 kHz while the receiver tunes.</li>
+    <li>The mixer and buffering are semi-analogue: the local oscillator is an ideal pulse source, and the stages are isolated with behavioural voltage sources.</li>
+
+    <nav class="pager" aria-label="Project navigation">
+      <a href="project-3.html"><span>Previous</span>Buck Down Converter PCB Design</a>
+      <a href="project-1.html"><span>Next</span>Electronic Chessboard Project</a>
+    </nav>
+  </article>
+  <footer class="page-footer">
+  <ul class="social-links">
+    <li><a href="mailto:irstalker@bigpond.com">Email</a></li>
+    <li><a href="https://linkedin.com/in/" target="_blank" rel="noopener">LinkedIn</a></li>
+    <li><a href="https://github.com/" target="_blank" rel="noopener">GitHub</a></li>
+  </ul>
+  <p>&copy; 2026 Ian Stalker. Built with HTML, CSS &amp; JavaScript.</p>
+</footer>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
